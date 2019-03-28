@@ -1,0 +1,7 @@
+/img_data
+/npy_data
+/qd_emo
+/QuickDraw
+*.npy
+*.png
+*.h5
