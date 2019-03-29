@@ -1,15 +1,10 @@
 import numpy as np
 import os
 import cv2
-import pickle
 
 from_dir = ".\\npy_data\\"
 to_dir = ".\\img_data\\"
 files = os.listdir(from_dir)
-x = []
-x_load = []
-y = []
-y_load = []
 
 def write_image(cat,index,array):
     dest_dir = to_dir + cat +"\\"
@@ -29,15 +24,13 @@ def load_data():
         # print(cat)
         imgs = np.load(file)
         print(imgs.shape)
-        # print(np.shape(x)) # (133572, 784)
+        # print(np.shape(imgs)) # (133572, 784)
 
-        # x = x.astype('float32') / 255.
-        imgs = imgs[0:10, :]
-        # print(xx)
+        # imgs = imgs.astype('float32') / 255.
+        imgs = imgs[0:100, :]
+
         for index,img in enumerate(imgs):
             img = img.reshape(28,28)
             write_image(catname,index,img)
-
-    return x_load, y_load
 
 load_data()

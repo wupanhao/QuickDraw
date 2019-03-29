@@ -2,6 +2,8 @@
 /npy_data
 /qd_emo
 /QuickDraw
+features
+labels
 *.npy
 *.png
 *.h5

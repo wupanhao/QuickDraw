@@ -8,6 +8,30 @@ model = load_model('QuickDraw.h5')
 
 
 def main():
+
+    img = cv2.imread("test.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    img = cv2.imread("arm_4.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    img = cv2.imread("bed_2.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)    
+    img = cv2.imread("candle_4.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    img = cv2.imread("door_4.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    img = cv2.imread("cloud_5.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    img = cv2.imread("rainbow_5.png")
+    pred_probab, pred_class = keras_predict(model, img)
+    print(pred_class, pred_probab)
+    return
+
     emojis = get_QD_emojis()
     cap = cv2.VideoCapture(0)
     Lower_green = np.array([110, 50, 50])

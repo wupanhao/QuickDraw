@@ -64,7 +64,7 @@ def main():
     test_x = test_x.reshape(test_x.shape[0], 28, 28, 1)
     model, callbacks_list = keras_model(28,28)
     print_summary(model)
-    model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=3, batch_size=64,
+    model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=2, batch_size=64,
               callbacks=[TensorBoard(log_dir="QuickDraw")])
     model.save('QuickDraw.h5')
 
