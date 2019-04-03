@@ -27,14 +27,11 @@ def test_data():
             count = count + 1
             img = cv2.imread(img_dir+dir+"\\"+file)
             gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+            print(gray.shape)
             pred_probab, pred_class = keras_predict(model, gray)
             print("should be " , catname , " , result is " , labels[pred_class], " probab: " ,  pred_probab)
             right = right + ( catname == labels[pred_class])
     print("Accuracy: ",right/count) 
-
-def main():
-    test_data()
-
 
 def keras_predict(model, image):
     processed = keras_process_image(image)
@@ -58,4 +55,4 @@ if __name__ == '__main__':
     # pred_probab, pred_class = keras_predict(model, i)
     # print("should be " , "bird" , " , result is " , labels[pred_class], " probab: " ,  pred_probab) 
     # pass
-    main()
+    test_data()

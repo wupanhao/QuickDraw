@@ -2,8 +2,11 @@
 /npy_data
 /qd_emo
 /QuickDraw
+__pycache__
 features
 labels
 *.npy
 *.png
+*.bmp
 *.h5
+*.zip
